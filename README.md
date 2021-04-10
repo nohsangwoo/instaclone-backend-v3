@@ -82,3 +82,10 @@ instagram clone project(BACKEND)
   schema에서 model정의할때 기본적으로 require속성이기에
   optional인 경우는 ?를 붙여줘야함
 - 위 두개의 차이를 인식하고 모델과 타입을 정의한다
+
+# prisma studio
+
+- npx prisma studio 로 실행 (package.json에 추가)
+
+- https://www.prisma.io/docs/concepts/components/prisma-studio
+  postico 같은건데 prisma에 최적화된 데이터베이스 시각화 프로그램
