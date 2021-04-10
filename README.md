@@ -89,3 +89,5 @@ instagram clone project(BACKEND)
 
 - https://www.prisma.io/docs/concepts/components/prisma-studio
   postico 같은건데 prisma에 최적화된 데이터베이스 시각화 프로그램
+
+# 파일을 분할하기위해 graphql-tools  라이브러리 사용
