@@ -71,3 +71,14 @@ instagram clone project(BACKEND)
 - npx prisma migrate dev
   (이때 .env의 postgresql에 필요한정보를 잘 입력한다./사용자이름 비번 포트번호 등등..)
 - 위 단계를 잘 따른다면 shema.prisma에서 지정한 model이 데이터베이스와 동기화됨(연동이 완료됨)
+
+# typeDef에 schema의 model내용을 수동으로 sync해줘야함
+
+(이때 sync정의시 주의사항)
+
+- typeDef
+  typeDef에서 table을 정의할때 기본적으로 optinal속성이기때문에 require인 경우는 !를 붙여줘야함
+- schema.prisma
+  schema에서 model정의할때 기본적으로 require속성이기에
+  optional인 경우는 ?를 붙여줘야함
+- 위 두개의 차이를 인식하고 모델과 타입을 정의한다
