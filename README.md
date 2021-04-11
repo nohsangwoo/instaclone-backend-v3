@@ -112,6 +112,8 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 
 # migrate로 진행
 
+<!-- npx prisma migrate dev --name add-profile --> 2021.04.11일 기준 여기서 --name add-profile은 제외
+
 - npx prisma migrate dev
   (이때 .env의 postgresql에 필요한정보를 잘 입력한다./사용자이름 비번 포트번호 등등..)
 - 위 단계를 잘 따른다면 shema.prisma에서 지정한 model이 데이터베이스와 동기화됨(연동이 완료됨)
@@ -140,3 +142,28 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
   (분할된 파일을 한곳에 모아서 로드하기위한 작업)
 - https://www.graphql-tools.com/docs/schema-merging
   (분할된 schema들을 모아주는 기능)
+
+# apply to dotenv
+
+- npm install dovenv
+
+# BFORE start clone coding
+
+- prisma파일과 , Movie와 관련된 typeDefs, resolvers파일을 삭제 및 database를 삭제 후 처음부터 다시 시작하게 세팅해둠
+- 또한 다시 instaclone데이터베이스를 다시 생성해줌
+
+# USER MODULE
+
+## User:
+
+- [ ] Create Account
+- [ ] See Profile
+- [ ] Login
+- [ ] Edit Profile
+- [ ] Follow User
+- [ ] Unfollow User
+- [ ] Change Avatar (Image Upload)
+
+# 4.0
+
+- npx prisma init
