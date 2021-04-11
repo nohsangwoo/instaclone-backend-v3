@@ -164,6 +164,15 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 - [ ] Unfollow User
 - [ ] Change Avatar (Image Upload)
 
-# 4.0
+# 4.0 createAccount part one
 
 - npx prisma init
+
+# 4.2 bcrypt createAccount part two
+
+- hashing password
+- npm install bcrypt
+
+# 4.3 createAccount part three
+
+- createAccount 기능 구현
