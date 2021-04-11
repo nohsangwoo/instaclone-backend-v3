@@ -4,6 +4,50 @@ instagram clone project(BACKEND)
 
 # we don't need to graphql-yoga anymore , apollo가 이제 지원을 잘 해줌
 
+# eslint and prettier setting
+
+- https://velog.io/@das01063/VSCode%EC%97%90%EC%84%9C-ESLint%EC%99%80-Prettier-TypeScript-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
+
+# ESLint 호환
+
+npm i -D eslint-config-prettier eslint-plugin-prettier
+
+- eslint-config-prettier는 Prettier와 충돌되는 ESLint 규칙들을 무시하는 설정이고, eslint-plugin-prettier는 Prettier를 사용해 포맷팅을 하도록 ESLint 규칙을 추가하는 플러그인입니다. (출처: Prettier - Integrating with Linters)
+
+# prettierrc.json 내용
+
+```
+{
+    "printWidth": 80,			// 한 줄의 라인 수
+    "tabWidth": 2,			// tab의 너비
+    "useTabs": false,			// tab 사용 여부
+    "semi": true,				// ; 사용 여부
+    "singleQuote": true,			// 'string' 사용 여부
+    "quoteProps": "consistent",		// 객체 property의 따옴표 여부
+    "trailingComma": "es5",		// 끝에 , 사용 여부
+    "bracketSpacing": true,		// Object literal에 띄어쓰기 사용 여부 (ex: { foo: bar })
+    "arrowParens": "always",		// 함수에서 인자에 괄호 사용 여부 (ex: (x) => y)
+    "endOfLine": "lf"			// 라인 엔딩 지정
+  }
+```
+
+# eslintrc.json 내용
+
+```
+{
+  ...
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  ...
+}
+```
+
 # apollo-server graphql install
 
 - https://github.com/apollographql 참고
@@ -90,4 +134,9 @@ instagram clone project(BACKEND)
 - https://www.prisma.io/docs/concepts/components/prisma-studio
   postico 같은건데 prisma에 최적화된 데이터베이스 시각화 프로그램
 
-# 파일을 분할하기위해 graphql-tools  라이브러리 사용
+# 파일을 분할하기위해 graphql-tools 라이브러리 사용
+
+- npm install graphql-tools
+  (분할된 파일을 한곳에 모아서 로드하기위한 작업)
+- https://www.graphql-tools.com/docs/schema-merging
+  (분할된 schema들을 모아주는 기능)

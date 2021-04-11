@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server-core';
 
-const typeDefs = gql`
+export const typeDefs = gql`
   # graphql version type alias
   type Movie {
     id: String!
