@@ -1,11 +1,10 @@
 import { ApolloServer } from 'apollo-server';
-import { resolvers, typeDefs } from './schema';
+import schema from './schema';
 
 // graphql-server에 적혀있는 세팅 방법
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema
 });
 
 server.listen().then(() => {

@@ -136,7 +136,7 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 
 # 파일을 분할하기위해 graphql-tools 라이브러리 사용
 
-- npm install graphql-tools
+- npm install graphql-tools@latest
   (분할된 파일을 한곳에 모아서 로드하기위한 작업)
 - https://www.graphql-tools.com/docs/schema-merging
   (분할된 schema들을 모아주는 기능)
