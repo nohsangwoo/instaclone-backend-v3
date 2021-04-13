@@ -156,13 +156,31 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 
 ## User:
 
-- [ ] Create Account
-- [ ] See Profile
-- [ ] Login
+- [x] Create Account
+- [x] See Profile
+- [x] Login
 - [ ] Edit Profile
+- [ ] Change Avatar (Image Upload)
 - [ ] Follow User
 - [ ] Unfollow User
-- [ ] Change Avatar (Image Upload)
+- [ ] Search Users
+- [ ] See Followers
+- [ ] See Following
+
+## Photos
+
+- [ ] See Photo
+- [ ] Upload Photo
+- [ ] Edit Photo
+- [ ] Like / Unlike Photo
+- [ ] See Photo Likes
+- [ ] See Feed
+- [ ] Search Photos
+- [ ] See Hashtags
+- [ ] Comments
+- [ ] Comment on Photo
+- [ ] Edit Comment
+- [ ] Delete Comment
 
 # 4.0 createAccount part one
 
@@ -176,3 +194,11 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 # 4.3 createAccount part three
 
 - createAccount 기능 구현
+
+# 4.4 login
+
+- npm install jsonwebtoken
+
+1. find username
+2. compare password
+3. return jsonwebtoken
