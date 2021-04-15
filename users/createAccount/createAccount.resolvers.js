@@ -27,8 +27,6 @@ export default {
 
         const uglyPassword = await bcrypt.hash(password, 10);
 
-        console.log('createaccount before', uglyPassword);
-
         const result = await client.user.create({
           data: {
             username,
@@ -38,8 +36,6 @@ export default {
             password: uglyPassword,
           },
         });
-
-        console.log('createaccount after', result);
 
         return {
           ok: true,
