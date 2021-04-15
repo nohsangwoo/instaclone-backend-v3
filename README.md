@@ -214,3 +214,16 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 # graphql client altair
 
 https://altair.sirmuel.design/features
+
+# 4.16
+
+altair사용하여 fileuload에서 createStream 사용시 생기는 버그 해결법
+
+```
+ "resolutions": {
+    "fs-capacitor": "^6.2.0",
+    "graphql-upload": "^11.0.0"
+  }
+```
+
+npx npm-force-resolutions
