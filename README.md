@@ -226,4 +226,12 @@ altair사용하여 fileuload에서 createStream 사용시 생기는 버그 해�
   }
 ```
 
-npx npm-force-resolutions
+- script 에 추가
+  npx npm-force-resolutions
+
+# 4.17 upload part four
+
+- process.cwd()
+
+current working directory
+현재 프로젝트의 root경로
