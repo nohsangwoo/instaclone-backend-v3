@@ -2,7 +2,7 @@
 require('dotenv').config();
 import { ApolloServer } from 'apollo-server';
 import schema from './schema';
-import { getUser } from "./users/users.utils";
+import { getUser } from './users/users.utils';
 // graphql-server에 적혀있는 세팅 방법
 
 const server = new ApolloServer({
@@ -14,7 +14,7 @@ const server = new ApolloServer({
     return {
       loggedInUser: await getUser(req.headers.token),
     };
-  }
+  },
 });
 
 // env안의 변수를 불러오는 방법

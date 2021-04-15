@@ -1,11 +1,9 @@
 import jwt from 'jsonwebtoken';
 import client from '../client';
 
-
-// 토큰화된 Id를 다시 verify하여 id를 추출하고 추출된 id로 유저정보를 불러온다
 export const getUser = async (token) => {
   try {
-    if (!token) { 
+    if (!token) {
       return null;
     }
     const { id } = await jwt.verify(token, process.env.SECRET_KEY);
@@ -18,4 +16,21 @@ export const getUser = async (token) => {
   } catch {
     return null;
   }
+};
+
+export const protectedResolver = (ourResolver) => (
+  root,
+  args,
+  context,
+  info
+) => {
+  //유저가 로그인되지 않은 상태면(토큰이 없다면) 에러 메시지 띄움
+  if (!context.loggedInUser) {
+    return {
+      ok: false,
+      error: 'Please log in to perform this action.',
+    };
+  }
+  // 유저가 로그인된 상태라면 전달받은 resolver를  실행시킴
+  return ourResolver(root, args, context, info);
 };
