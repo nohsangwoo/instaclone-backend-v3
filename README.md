@@ -206,3 +206,5 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 # 4.9 http header에서 mutaion이나 query등에서 인자로 받아오는 방법
 
 # 4.10 context에서 request와 response를 사용하는 방법
+
+# 4.13 currying 개념 익히기

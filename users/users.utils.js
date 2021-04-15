@@ -18,19 +18,15 @@ export const getUser = async (token) => {
   }
 };
 
-export const protectedResolver = (ourResolver) => (
-  root,
-  args,
-  context,
-  info
-) => {
-  //유저가 로그인되지 않은 상태면(토큰이 없다면) 에러 메시지 띄움
-  if (!context.loggedInUser) {
-    return {
-      ok: false,
-      error: 'Please log in to perform this action.',
-    };
-  }
-  // 유저가 로그인된 상태라면 전달받은 resolver를  실행시킴
-  return ourResolver(root, args, context, info);
-};
+// currying 개념 익히기
+export function protectedResolver(ourResolver) {
+  return function (root, args, context, info) {
+    if (!context.loggedInUser) {
+      return {
+        ok: false,
+        error: 'Please log in to perform this action.',
+      };
+    }
+    return ourResolver(root, args, context, info);
+  };
+}
