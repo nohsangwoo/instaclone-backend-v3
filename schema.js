@@ -9,9 +9,7 @@ const { makeExecutableSchema } = require('@graphql-tools/schema');
 const loadedTypes = loadFilesSync(`${__dirname}/**/*.typeDefs.js`);
 // __dirname / root의 모든 폴더안(**)의 / 모든 파일(*)을 살펴보고 이어지는 파일명은 .뒤에 queries또는 mutation이 이어지고 마지막 확장자는.js 로 끝나는 파일을 찾음
 
-const loadedResolvers = loadFilesSync(
-  `${__dirname}/**/*.{queries,mutations}.js`
-);
+const loadedResolvers = loadFilesSync(`${__dirname}/**/*.resolvers.js`);
 
 // 위에서 파일을 찾은다음 그 파일들을 merge 하는 단계(typedefs와 resolvers 파일들)
 
