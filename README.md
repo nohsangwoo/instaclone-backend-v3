@@ -202,3 +202,5 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 1. find username
 2. compare password
 3. return jsonwebtoken
+
+# 4.9 http header에서 mutaion이나 query등에서 인자로 받아오는 방법
