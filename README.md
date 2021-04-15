@@ -235,3 +235,9 @@ altair사용하여 fileuload에서 createStream 사용시 생기는 버그 해�
 
 current working directory
 현재 프로젝트의 root경로
+
+# graphql server를 apollo server에서 express로 변경하여 돌려버리기
+
+- npm install apollo-server-express
+- npm install express
+- npm install morgan
