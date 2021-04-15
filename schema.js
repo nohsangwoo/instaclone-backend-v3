@@ -13,10 +13,10 @@ const loadedResolvers = loadFilesSync(`${__dirname}/**/*.resolvers.js`);
 
 // 위에서 파일을 찾은다음 그 파일들을 merge 하는 단계(typedefs와 resolvers 파일들)
 
-const typeDefs = mergeTypeDefs(loadedTypes);
-const resolvers = mergeResolvers(loadedResolvers);
+export const typeDefs = mergeTypeDefs(loadedTypes);
+export const resolvers = mergeResolvers(loadedResolvers);
 
-// 위에서 merge한 파일들을 하나의 스키마로 만들어주는 단계
-const schema = makeExecutableSchema({ typeDefs, resolvers });
+// // 위에서 merge한 파일들을 하나의 스키마로 만들어주는 단계
+// const schema = makeExecutableSchema({ typeDefs, resolvers });
 
-export default schema;
+// export default schema;
