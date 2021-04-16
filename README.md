@@ -241,3 +241,5 @@ current working directory
 - npm install apollo-server-express
 - npm install express
 - npm install morgan
+
+# 4.20 self-referencing relationship
