@@ -286,3 +286,4 @@ const followers = await client.user.findMany({
 - https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination
 
 # 4.26 Computed Fields part One
+- 데이터베이스엔 존재하지 않지만 무엇인가 계산해서 제공해주는 값
