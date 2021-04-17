@@ -293,3 +293,5 @@ const followers = await client.user.findMany({
   상위 parent가 존재한다면 해당parent의 값
 
 # 4.27 isMe computed field
+
+# 4.28 isFollowing computed field
