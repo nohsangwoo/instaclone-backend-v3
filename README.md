@@ -284,3 +284,5 @@ const followers = await client.user.findMany({
 # 4.25 following pagination part one - cursur pagination
 
 - https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination
+
+# 4.26 Computed Fields part One
