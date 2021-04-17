@@ -245,4 +245,7 @@ current working directory
 # 4.20 self-referencing relationship
 
 # 4.20 unfollow user
+
 # include 를 이용하여 대상의 컬럼이 다른 사용자와 관계가 있다면 해당 정보를 가져오도록 해줌
+
+# 4.23 Followers Pagination part One - offset Pagenation
