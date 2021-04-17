@@ -162,7 +162,8 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 - [x] Edit Profile
 - [x] Follow User
 - [x] Unfollow User
-- [ ] See Followers and See Following w/ Pagination
+- [x] See Followers w/ Pagination
+- [x] See Following w/ Pagination
 - [ ] Computed Fields
 - [ ] Unfollow User
 - [ ] Search Users
@@ -250,6 +251,7 @@ current working directory
 
 # 4.23 Followers Pagination part One - offset Pagenation
 
+- https://www.prisma.io/docs/concepts/components/prisma-client/pagination#offset-pagination
 - where의 오퍼레이터로 some,every,none을 사용할수있음
 
 ```
@@ -278,3 +280,7 @@ const followers = await client.user.findMany({
 ```
 
 - username으로 검색한 결과중 id의 내용만 필터링 하여 가져옴(컬럼의 pick type과 같음)
+
+# 4.25 following pagination part one - cursur pagination
+
+- https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination
