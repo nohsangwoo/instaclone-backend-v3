@@ -265,3 +265,16 @@ const followers = await client.user.findMany({
 - some : 제공하는 검색어의 일부라도 포함된다면 결과값에 포함하여 반환
 - every : 조건에 완벽하게 부합하는 결과값만 반환
 - none : 조건에 부합하는 값을 제외한 결과값을 반환(like a omit)
+
+# 4.24 followers pagination part two
+
+- select로 검색시 불러오는 데이터필드를 선택가능
+
+```
+  const ok = await client.user.findUnique({
+        where: { username },
+        select: { id: true },
+      });
+```
+
+- username으로 검색한 결과중 id의 내용만 필터링 하여 가져옴(컬럼의 pick type과 같음)
