@@ -315,3 +315,20 @@ client.user.findMany({
         },
       }),
 ```
+
+# Photos
+
+- [ ] Upload Photo (Parse #)
+- [ ] See Photo
+- [ ] See Hashtags
+- [ ] Search Photos
+- [ ] Edit Photo
+- [ ] Like / Unlike Photo
+- [ ] See Photo Likes
+- [ ] See Feed
+- [ ] Comments
+- [ ] Comment on Photo
+- [ ] Edit Comment
+- [ ] Delete Comment
+
+# 6.0 Photos Model
