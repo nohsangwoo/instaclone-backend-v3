@@ -249,3 +249,19 @@ current working directory
 # include 를 이용하여 대상의 컬럼이 다른 사용자와 관계가 있다면 해당 정보를 가져오도록 해줌
 
 # 4.23 Followers Pagination part One - offset Pagenation
+
+- where의 오퍼레이터로 some,every,none을 사용할수있음
+
+```
+const followers = await client.user.findMany({
+  where:{
+    some:{   <--- 사용법
+      username:username
+    }
+  }
+})
+```
+
+- some : 제공하는 검색어의 일부라도 포함된다면 결과값에 포함하여 반환
+- every : 조건에 완벽하게 부합하는 결과값만 반환
+- none : 조건에 부합하는 값을 제외한 결과값을 반환(like a omit)
