@@ -164,9 +164,8 @@ npm i -D eslint-config-prettier eslint-plugin-prettier
 - [x] Unfollow User
 - [x] See Followers w/ Pagination
 - [x] See Following w/ Pagination
-- [ ] Computed Fields
-- [ ] Unfollow User
-- [ ] Search Users
+- [x] Computed Fields
+- [x] Search Users
 
 ## Photos
 
@@ -295,3 +294,24 @@ const followers = await client.user.findMany({
 # 4.27 isMe computed field
 
 # 4.28 isFollowing computed field
+
+- seeProfile로 검색한 유저가 (로그인된)내가 following한 대상인지 구분해주는 필드
+
+# 4.29 searching users
+
+- startsWith
+  키워드가 시작되는 부분과 같다면 검색됨
+  ex)
+  term: noh // -- 검색어
+  nohsangwoo // 검색됨
+  sangwoonoh // 검색안됨
+
+```
+client.user.findMany({
+        where: {
+          username: {
+            startsWith: keyword.toLowerCase(),
+          },
+        },
+      }),
+```
