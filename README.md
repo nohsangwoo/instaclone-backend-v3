@@ -291,3 +291,5 @@ const followers = await client.user.findMany({
 
 - root arguement 사용법
   상위 parent가 존재한다면 해당parent의 값
+
+# 4.27 isMe computed field
