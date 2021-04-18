@@ -4,28 +4,42 @@ import { processHashtags } from '../photos.utils';
 
 export default {
   Mutation: {
-    uploadPhoto: protectedResolver(
-      async (_, { file, caption }, { loggedInUser }) => {
-        let hashtagObj = [];
-        if (caption) {
-          hashtagObj = processHashtags(caption);
-        }
-        return client.photo.create({
-          data: {
-            file,
-            caption,
-            user: {
-              connect: {
-                id: loggedInUser.id,
+    editPhoto: protectedResolver(
+      async (_, { id, caption }, { loggedInUser }) => {
+        const oldPhoto = await client.photo.findFirst({
+          where: {
+            id,
+            userId: loggedInUser.id,
+          },
+          include: {
+            hashtags: {
+              select: {
+                hashtag: true,
               },
             },
-            ...(hashtagObj.length > 0 && {
-              hashtags: {
-                connectOrCreate: hashtagObj,
-              },
-            }),
           },
         });
+        if (!oldPhoto) {
+          return {
+            ok: false,
+            error: 'Photo not found.',
+          };
+        }
+        await client.photo.update({
+          where: {
+            id,
+          },
+          data: {
+            caption,
+            hashtags: {
+              disconnect: oldPhoto.hashtags,
+              connectOrCreate: processHashtags(caption),
+            },
+          },
+        });
+        return {
+          ok: true,
+        };
       }
     ),
   },
