@@ -338,3 +338,6 @@ client.user.findMany({
 - setting basic form
 
 # 6.3 Upload Photo part Two
+
+- https://www.regexpal.com/
+  정규 표현식 도움
