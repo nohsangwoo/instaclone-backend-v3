@@ -332,3 +332,7 @@ client.user.findMany({
 - [ ] Delete Comment
 
 # 6.0 Photos Model
+
+# 6.2 Upload Photo part One
+
+- setting basic form
