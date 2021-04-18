@@ -320,7 +320,7 @@ client.user.findMany({
 
 - [x] Upload Photo (Parse #)
 - [x] See Photo
-- [ ] See Hashtags
+- [ ] See Hashtag
 - [ ] Search Photos
 - [ ] Edit Photo
 - [ ] Like / Unlike Photo
@@ -344,3 +344,23 @@ client.user.findMany({
   (match)함수를 사용하여 정규표현식을 사용하여 배열로 특정 단어를 추출하여 배열로 반환함
 
 # 6.5 seePhoto
+
+# 6.6 seeHashtag
+
+- Photo - user
+  이 photo와 연결된 하나의 user를 검색
+
+- Photo - hashtags
+  이 photo id를 가지고있는 모든 hashtag를 검색
+
+- Hashtag - photos
+  해시 태그에서 hashtag의 id를 가지고있는 photo들을 검색
+- hashtag - totalPhotos.count
+  해시 태그 에서 해당 태그를 가지고있는 모든 photo 의 수를 검색
+- seeHashtag
+  hashtag 이름으로 하나의 hashtag를 검색
+
+# update
+
+npm i --save-dev prisma │
+npm i @prisma/client
