@@ -318,8 +318,8 @@ client.user.findMany({
 
 # Photos
 
-- [ ] Upload Photo (Parse #)
-- [ ] See Photo
+- [x] Upload Photo (Parse #)
+- [x] See Photo
 - [ ] See Hashtags
 - [ ] Search Photos
 - [ ] Edit Photo
@@ -341,3 +341,6 @@ client.user.findMany({
 
 - https://www.regexpal.com/
   정규 표현식 도움
+  (match)함수를 사용하여 정규표현식을 사용하여 배열로 특정 단어를 추출하여 배열로 반환함
+
+# 6.5 seePhoto
