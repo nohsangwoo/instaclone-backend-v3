@@ -336,3 +336,5 @@ client.user.findMany({
 # 6.2 Upload Photo part One
 
 - setting basic form
+
+# 6.3 Upload Photo part Two
