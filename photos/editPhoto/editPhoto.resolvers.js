@@ -1,6 +1,6 @@
-import client from '../../client';
-import { protectedResolver } from '../../users/users.utils';
-import { processHashtags } from '../photos.utils';
+import client from "../../client";
+import { protectedResolver } from "../../users/users.utils";
+import { processHashtags } from "../photos.utils";
 
 export default {
   Mutation: {
@@ -22,7 +22,7 @@ export default {
         if (!oldPhoto) {
           return {
             ok: false,
-            error: 'Photo not found.',
+            error: "Photo not found.",
           };
         }
         await client.photo.update({

@@ -1,7 +1,7 @@
-import { createWriteStream } from 'fs';
-import bcrypt from 'bcrypt';
-import client from '../../client';
-import { protectedResolver } from '../users.utils';
+import { createWriteStream } from "fs";
+import bcrypt from "bcrypt";
+import client from "../../client";
+import { protectedResolver } from "../users.utils";
 
 const resolverFn = async (
   _,
@@ -14,7 +14,7 @@ const resolverFn = async (
     const newFilename = `${loggedInUser.id}-${Date.now()}-${filename}`;
     const readStream = createReadStream();
     const writeStream = createWriteStream(
-      process.cwd() + '/uploads/' + newFilename
+      process.cwd() + "/uploads/" + newFilename
     );
     readStream.pipe(writeStream);
     avatarUrl = `http://localhost:4000/static/${newFilename}`;
@@ -44,7 +44,7 @@ const resolverFn = async (
   } else {
     return {
       ok: false,
-      error: 'Could not update profile.',
+      error: "Could not update profile.",
     };
   }
 };

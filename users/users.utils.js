@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken';
-import client from '../client';
+import jwt from "jsonwebtoken";
+import client from "../client";
 
 export const getUser = async (token) => {
   try {
@@ -18,13 +18,12 @@ export const getUser = async (token) => {
   }
 };
 
-// currying 개념 익히기
 export function protectedResolver(ourResolver) {
   return function (root, args, context, info) {
     if (!context.loggedInUser) {
       return {
         ok: false,
-        error: 'Please log in to perform this action.',
+        error: "Please log in to perform this action.",
       };
     }
     return ourResolver(root, args, context, info);
