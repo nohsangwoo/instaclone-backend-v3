@@ -326,14 +326,14 @@ client.user.findMany({
 - [x] Like / Unlike Photo
 - [x] See Photo Likes
 - [x] See Feed
-- [ ] See Photo Comments
+- [x] See Photo Comments
 - [ ] Is Mine (Delete Photo)
 
 # Comments
 
 - [x] Comment on Photo
-- [ ] Edit Comment
 - [ ] Delete Comment (Is Mine)
+- [ ] Edit Comment
 
 ## Extras
 
@@ -398,3 +398,7 @@ npm i @prisma/client
 # 6.13 Comment on Photos
 
 - 사진에 달린 댓글(약간 like와 비슷함)
+
+# 6.14 See Photo Comments
+
+- 특정 사진에 연결된 모든 comment를 찾아서 반환
