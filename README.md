@@ -402,3 +402,22 @@ npm i @prisma/client
 # 6.14 See Photo Comments
 
 - 특정 사진에 연결된 모든 comment를 찾아서 반환
+
+# 6.15 isMine
+
+- photo가 내껀지 아닌지만 판별하는 기능
+- photo의 userId를 전달받아서 사용함(첫번째 arg는 parent의 userId임)
+  예컨데 Comment에서 무엇인가 query, mutation을 사용시 해당 테이블의 field중 userId가 존재한다면 query, mutation을 사용할때 첫번째 args로 전달받을수 있다
+  ```
+  export default {
+  Comment: {
+    isMine: ({ userId }, _, { loggedInUser }) => {
+      if (!loggedInUser) {
+        return false;
+      }
+      return userId === loggedInUser.id;
+    },
+  },
+  };
+  <!-- 이런 형식임 -->
+  ```
