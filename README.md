@@ -364,3 +364,14 @@ client.user.findMany({
 
 npm i --save-dev prisma │
 npm i @prisma/client
+
+# 6.10 Like Unlike Photos part two
+
+- 즉 로그인한 유저(사용자가) 어떤 사진에 like를 눌렀거나 취소했을때정보를 like테이블에 담는다.
+- 이때 like가 만들어지는 조건은 user와 photo에 connect 하는 방식으로 연결
+
+# 6.11 seePhotoLikes
+
+- 사진에 like를 누른 유저의 정보들을 보여줌
+- 그러기 위해 select조건을 사용하는데 , 선택한 특정 key의 데이터 정보만 가져오는 것 이고(picktype같은느낌)
+- include는 기본적으로 가져와지는 데이터에 "추가로" 특정 key값의 데이터도 가져오는것임(extends같은 느낌)
