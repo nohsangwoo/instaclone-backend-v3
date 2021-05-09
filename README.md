@@ -381,3 +381,8 @@ npm i @prisma/client
 - 내 feed와 나를 follow하는 유저의 feed를 전부 가져옴
 - 이때 feed라는건 사진 정보를 가져오는 것
 - 이때 정렬은 만들어진 날짜가 가장 최근의 것이 가장 먼저 불려오도록 정렬한다
+
+# some, every, none
+
+- some 하나 또는 모든 결과를 반환할때!(거의 이것만 쓰임)
+- https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#some 참조
