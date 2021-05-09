@@ -323,9 +323,9 @@ client.user.findMany({
 - [x] See Hashtag
 - [x] Search Photos
 - [x] Edit Photo
-- [ ] Like / Unlike Photo
-- [ ] See Photo Likes
-- [ ] See Feed
+- [x] Like / Unlike Photo
+- [x] See Photo Likes
+- [x] See Feed
 - [ ] Comments
 - [ ] Comment on Photo
 - [ ] Edit Comment
@@ -375,3 +375,9 @@ npm i @prisma/client
 - 사진에 like를 누른 유저의 정보들을 보여줌
 - 그러기 위해 select조건을 사용하는데 , 선택한 특정 key의 데이터 정보만 가져오는 것 이고(picktype같은느낌)
 - include는 기본적으로 가져와지는 데이터에 "추가로" 특정 key값의 데이터도 가져오는것임(extends같은 느낌)
+
+# 6.12 seeFeed
+
+- 내 feed와 나를 follow하는 유저의 feed를 전부 가져옴
+- 이때 feed라는건 사진 정보를 가져오는 것
+- 이때 정렬은 만들어진 날짜가 가장 최근의 것이 가장 먼저 불려오도록 정렬한다
