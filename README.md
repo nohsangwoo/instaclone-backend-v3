@@ -326,10 +326,18 @@ client.user.findMany({
 - [x] Like / Unlike Photo
 - [x] See Photo Likes
 - [x] See Feed
-- [ ] Comments
-- [ ] Comment on Photo
+- [ ] See Photo Comments
+- [ ] Is Mine (Delete Photo)
+
+# Comments
+
+- [x] Comment on Photo
 - [ ] Edit Comment
-- [ ] Delete Comment
+- [ ] Delete Comment (Is Mine)
+
+## Extras
+
+- [ ] S3 Image Upload
 
 # 6.0 Photos Model
 
@@ -386,3 +394,7 @@ npm i @prisma/client
 
 - some 하나 또는 모든 결과를 반환할때!(거의 이것만 쓰임)
 - https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#some 참조
+
+# 6.13 Comment on Photos
+
+- 사진에 달린 댓글(약간 like와 비슷함)

@@ -1,4 +1,4 @@
-import { gql } from "apollo-server";
+import { gql } from 'apollo-server';
 
 export default gql`
   type Photo {
@@ -8,6 +8,7 @@ export default gql`
     caption: String
     likes: Int!
     hashtags: [Hashtag]
+    isMine: Boolean!
     createdAt: String!
     updatedAt: String!
   }
