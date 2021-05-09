@@ -421,3 +421,7 @@ npm i @prisma/client
   };
   <!-- 이런 형식임 -->
   ```
+
+# 6.16 Delete Comment and Photos
+
+- 특정 photo와 comment를 찾아서 삭제하는 기능
