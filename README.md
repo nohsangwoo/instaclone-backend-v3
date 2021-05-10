@@ -341,7 +341,7 @@ client.user.findMany({
 
 ## Extras
 
-- [ ] S3 Image Upload
+- [x] S3 Image Upload
 
 # 6.0 Photos Model
 
