@@ -7,3 +7,27 @@ AWS.config.update({
     secretAccessKey: process.env.AWS_SECRET,
   },
 });
+
+// 공통적으로 사용하는 기능인데 사진 업로드에 관련된 기능
+// 사진파일과 로그인한 유저id를 전달받는다
+export const uploadPhoto = async (file, userId) => {
+  // 파일에서 파일이름과, createReadStream을 추출하는 과정을 비동기 처리한다
+  const { filename, createReadStream } = await file;
+  // readStream을 추출해서 변수저장
+  const readStream = createReadStream();
+  // 저장되는 파일이름을 만든다(userId-오늘날짜-전달받은 파일이름)
+  const objectName = `${userId}-${Date.now()}-${filename}`;
+  //   파일을 저장한다음 저장된 주소를 알아낸다.(원래 data로 받아서 data.Location으로 뽑아도 상관없음)
+  const { Location } = await new AWS.S3()
+    .upload({
+      // 버킷이름
+      Bucket: 'instaclone21-uploads',
+      // 저장되는 파일이름
+      Key: objectName,
+      ACL: 'public-read',
+      // 저장되는 파일 stream
+      Body: readStream,
+    })
+    .promise();
+  return Location;
+};
