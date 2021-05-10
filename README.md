@@ -451,3 +451,22 @@ aws s3 에 사진 업로드하기
   https://www.npmjs.com/package/aws-sdk
 
 - s3 사용법 익히기
+
+# 6.21 S3 Photo Upload part Three
+
+uploadPhoto에도 실제로 S3서버에 업로드하는방법 추가 및 경로 설정
+
+# s3에서 사진을 지우고 싶을때
+
+```
+export const deleteInS3 = async (fileUrl) => {
+const Key = fileUrl.replace(
+'https://버킷이름.s3.amazonaws.com/',
+''
+);
+await S3.deleteObject({
+Bucket,
+Key,
+}).promise();
+};
+```
