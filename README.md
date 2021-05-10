@@ -337,7 +337,7 @@ client.user.findMany({
 
 ## Refactor
 
-- [ ] Mutation Responses
+- [x] Mutation Responses
 
 ## Extras
 
@@ -433,3 +433,8 @@ npm i @prisma/client
 # 6.17 editComment
 
 - shared 폴더에 담아둔 typeDefs는 공유됨
+
+# 6.18 protectedResolver Refactor
+
+- info args 사용법
+  info : 현재 작업중인 쿼리또는 뮤테이션의 정보를 담고있음
