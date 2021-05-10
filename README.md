@@ -327,13 +327,17 @@ client.user.findMany({
 - [x] See Photo Likes
 - [x] See Feed
 - [x] See Photo Comments
-- [ ] Is Mine (Delete Photo)
+- [x] Is Mine (Delete Photo)
 
 # Comments
 
 - [x] Comment on Photo
-- [ ] Delete Comment (Is Mine)
-- [ ] Edit Comment
+- [x] Delete Comment (Is Mine)
+- [x] Edit Comment
+
+## Refactor
+
+- [ ] Mutation Responses
 
 ## Extras
 
@@ -425,3 +429,7 @@ npm i @prisma/client
 # 6.16 Delete Comment and Photos
 
 - 특정 photo와 comment를 찾아서 삭제하는 기능
+
+# 6.17 editComment
+
+- shared 폴더에 담아둔 typeDefs는 공유됨
