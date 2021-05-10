@@ -438,3 +438,16 @@ npm i @prisma/client
 
 - info args 사용법
   info : 현재 작업중인 쿼리또는 뮤테이션의 정보를 담고있음
+
+# change return type
+
+- MutationResponse type
+
+# 6.19 S3 Photo Upload
+
+aws s3 에 사진 업로드하기
+
+- npm i aws-sdk
+  https://www.npmjs.com/package/aws-sdk
+
+- s3 사용법 익히기
