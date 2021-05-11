@@ -473,8 +473,11 @@ Key,
 
 ## DMs
 
-- [ ] Create Room
-- [ ] See Room
+- [x] See Room
+- [ ] Send Message (Create Room)
 - [ ] See Rooms
-- [ ] Send Message
 - [ ] Realtime Messages
+
+# 7.2 seeRooms
+
+- room 테이블에서 로그인한 유저의 모든 방을 찾는다
