@@ -531,3 +531,14 @@ message{
 ```
 
 이런식으로 무한의 깊이로 빠지지 않게 만들기 위해 다른 테이블 접근시는 computed field(자동계산)로 처리해준다
+
+# 7.7 Subscriptions Setup part One
+
+- subscription은 서버에있는 것이 무엇이든 항상 listen할 수 있게 해줌
+- 실시간이고 웹소켓 기반임
+- subscriptions할때 필요 조건중 하나는 pubsub class가 있어야 함
+- but pubsub은 prod용으론 적합하지 않고 Redis pubsub서버를 사용하는게 prod 용으로 좋음
+- 돈내는거 말고는 똑같이 작동함 (사용법도 비슷함)
+- https://www.apollographql.com/docs/apollo-server/data/subscriptions/#production-pubsub-libraries 참고
+
+- 웹소켓에 대한 정보를 우리 서버에 설치
