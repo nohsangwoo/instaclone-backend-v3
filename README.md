@@ -476,7 +476,8 @@ Key,
 - [x] See Room
 - [x] Send Message (Create Room)
 - [x] See Rooms
-- [ ] Computed Fields
+- [x] Computed Fields
+- [x] See (Read) Message
 - [ ] Realtime Messages
 
 # 7.2 seeRooms
