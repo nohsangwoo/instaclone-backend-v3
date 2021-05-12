@@ -38,7 +38,7 @@ export default {
               },
             },
           });
-          //   또는 이미 방이 있는경우 방을 찾아 해당 id를 가져온다
+          //   또는 전달받은 유저가 없고 이미 방이 있는경우 방을 찾아 해당 id를 가져온다
         } else if (roomId) {
           room = await client.room.findUnique({
             where: {

@@ -475,9 +475,25 @@ Key,
 
 - [x] See Room
 - [x] Send Message (Create Room)
-- [ ] See Rooms
+- [x] See Rooms
+- [ ] Computed Fields
 - [ ] Realtime Messages
 
 # 7.2 seeRooms
 
 - room 테이블에서 로그인한 유저의 모든 방을 찾는다
+
+# 7.3 sendMessage
+
+- 메시지를 보낼 대상의 사용자만 존재하면(이미 방이 만들어지지 않은경우) room 생성
+
+- 메시지를 보낼껀데 이미 room이 존재하는경우 roomId를 전달받아 message를 room과 user에 연결한다
+
+- room이 없고 대상 userId만 있으면 새롭게 방을 만든다음 메시지를 보낼 대상 user와 로그인한 유저의 user를 connect해준다.
+
+- 마지막으로 메시지를 생성한다음 room과 로그인한 User를 연결해준다.
+
+# 7.4 seeRoom
+
+- 나와 대화중인 특정 방을 찾음, 이때 users에 로그인한 유저의 id가 포함돼야하기 때문에 findFirst를 사용
+  (findUnique는 한개의유니크한 컬럼만으로 검색가능)
