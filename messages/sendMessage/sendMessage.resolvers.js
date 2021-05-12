@@ -6,6 +6,7 @@ export default {
     sendMessage: protectedResolver(
       async (_, { payload, roomId, userId }, { loggedInUser }) => {
         let room = null;
+        // 전달받은 유저가 실제 존재하는지 찾아봄
         if (userId) {
           const user = await client.user.findUnique({
             where: {
@@ -15,12 +16,14 @@ export default {
               id: true,
             },
           });
+          //   유저 못찾으면 에러 핸들링
           if (!user) {
             return {
               ok: false,
               error: 'This user does not exist.',
             };
           }
+          //   위 단계를 통과한 경우 방을 새로 생성한다.
           room = await client.room.create({
             data: {
               users: {
@@ -35,6 +38,7 @@ export default {
               },
             },
           });
+          //   또는 이미 방이 있는경우 방을 찾아 해당 id를 가져온다
         } else if (roomId) {
           room = await client.room.findUnique({
             where: {
@@ -44,6 +48,7 @@ export default {
               id: true,
             },
           });
+          //   룸id를 전달받았지만 룸을 찾을 수없는 경우 에러 핸들링
           if (!room) {
             return {
               ok: false,
@@ -51,6 +56,7 @@ export default {
             };
           }
         }
+        //  (내가)보낼 메시지를 생성하고 room과 로그인한 user에 각각 연결해준다
         await client.message.create({
           data: {
             payload,
