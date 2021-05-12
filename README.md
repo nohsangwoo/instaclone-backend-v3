@@ -542,3 +542,15 @@ message{
 - https://www.apollographql.com/docs/apollo-server/data/subscriptions/#production-pubsub-libraries 참고
 
 - 웹소켓에 대한 정보를 우리 서버에 설치
+
+# 7.8 Subscriptions Setup part Two
+
+subscriptions 사용위한 환경 설정
+
+- subscription의 pubsub.publish 의 사용법은
+  트리거와 typedef에서 지정한 subscription 이름 이다.
+
+```
+    pubsub.publish(NEW_MESSAGE, { roomUpdates: { ...message } });
+
+```
