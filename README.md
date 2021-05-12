@@ -554,3 +554,7 @@ subscriptions 사용위한 환경 설정
     pubsub.publish(NEW_MESSAGE, { roomUpdates: { ...message } });
 
 ```
+
+# 7.9 Filtering Subscriptions part One
+
+- withFilter를 이용하여 Subscriptions의 조건을 만들어줌
