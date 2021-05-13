@@ -10,13 +10,31 @@ const PORT = process.env.PORT;
 const apollo = new ApolloServer({
   resolvers,
   typeDefs,
-  context: async ({ req }) => {
-    // http 상태와 ws상태를 둘다 사용하려고 이런 작업을 해줌
-    if (req) {
+  // http 상태와 ws상태를 둘다 사용하려고 이런 작업을 해줌
+  context: async (ctx) => {
+    if (ctx.req) {
       return {
-        loggedInUser: await getUser(req.headers.token),
+        loggedInUser: await getUser(ctx.req.headers.token),
+      };
+    } else {
+      const {
+        connection: { context },
+      } = ctx;
+      return {
+        loggedInUser: context.loggedInUser,
       };
     }
+  },
+  subscriptions: {
+    onConnect: async ({ token }) => {
+      if (!token) {
+        throw new Error("You can't listen.");
+      }
+      const loggedInUser = await getUser(token);
+      return {
+        loggedInUser,
+      };
+    },
   },
 });
 

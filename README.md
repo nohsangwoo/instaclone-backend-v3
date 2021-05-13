@@ -563,3 +563,5 @@ subscriptions 사용위한 환경 설정
 
 - roomId를 가지고 subscriptions중 방이 없는경우 핸들링
 - 상위 컴포넌트에서 전달받지 않은 함수를 고차컴포넌트 형식으로 사용하고 싶을때 패턴
+
+# 7.11 Authenticating Subscriptions

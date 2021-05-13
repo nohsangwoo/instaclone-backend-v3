@@ -7,9 +7,14 @@ export default {
   Subscription: {
     roomUpdates: {
       subscribe: async (root, args, context, info) => {
-        const room = await client.room.findUnique({
+        const room = await client.room.findFirst({
           where: {
             id: args.id,
+            users: {
+              some: {
+                id: context.loggedInUser.id,
+              },
+            },
           },
           select: {
             id: true,
@@ -35,8 +40,29 @@ export default {
           // 전달받은 id와 roomUpdates가 subscriptions 하고있는 곳에서 반환받는 roomId가 같은경우 실행됨
           // fillter function임
           // 아래의 조건에서만 작동한다는 뜻
-          ({ roomUpdates }, { id }) => {
-            return roomUpdates.roomId === id;
+          // roomUpdates은 구독하고 있는 sendMessage에서 실시간으로 전달 받고있는 roomId와 payload중 roomId에 관한 내용
+          async ({ roomUpdates }, { id }, { loggedInUser }) => {
+            if (roomUpdates.roomId === id) {
+              // subscriptions 하고있는 대상의 roomId와 전달받은 id가 같고
+              // 헤딩 room에서 users의 목록중 로그인한 유저의 id가 존재한다면 roomId를 반환
+              const room = await client.room.findFirst({
+                where: {
+                  id,
+                  users: {
+                    some: {
+                      id: loggedInUser.id,
+                    },
+                  },
+                },
+                select: {
+                  id: true,
+                },
+              });
+              if (!room) {
+                return false;
+              }
+              return true;
+            }
           }
           // 이 resolver의 (root, args, context, info)를 withFilter로 보내줌
         )(root, args, context, info);
