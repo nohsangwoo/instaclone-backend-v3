@@ -565,3 +565,10 @@ subscriptions 사용위한 환경 설정
 - 상위 컴포넌트에서 전달받지 않은 함수를 고차컴포넌트 형식으로 사용하고 싶을때 패턴
 
 # 7.11 Authenticating Subscriptions
+
+- onConnect 사용법
+  user가 연결됏을때 뭔가를 해줄수 있는 기능
+  여기서 http header를 전달받아 핸들링할수 있다.
+- https://www.apollographql.com/docs/apollo-server/data/subscriptions/#onconnect-and-ondisconnect 참고
+
+-

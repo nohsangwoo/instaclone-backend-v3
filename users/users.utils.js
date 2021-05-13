@@ -6,7 +6,9 @@ export const getUser = async (token) => {
     if (!token) {
       return null;
     }
+    // 토근을 복호화 하고 추출(id를 jsonwebtoken으로 암호화 했으니 복호화 해도 id가 담겨있음)
     const { id } = await jwt.verify(token, process.env.SECRET_KEY);
+    // 복호화된 id를 이용하여 user를 찾아서 반환
     const user = await client.user.findUnique({ where: { id } });
     if (user) {
       return user;
