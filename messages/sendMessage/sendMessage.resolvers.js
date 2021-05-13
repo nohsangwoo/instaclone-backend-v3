@@ -74,6 +74,8 @@ export default {
             },
           },
         });
+        // subscription을 위한 pubsub의 사용 방법 (roomUpdates은 subscriptions에서 정의된 이름)
+        // console.log(message);
         pubsub.publish(NEW_MESSAGE, { roomUpdates: { ...message } });
         return {
           ok: true,
