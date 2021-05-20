@@ -120,3 +120,6 @@ prisma/migrations/
 
 #uploads
 uploads/*
+
+#build all
+/build
