@@ -24,7 +24,7 @@ export default {
         // photo를 id 로 찾았을때 comment테이블의 row를 생성한다
         // payload(comment내용)을 전달받아서 저장하고
         // 찾아낸 photo와 연결하고 user를 로그인한 user와 연결한다
-        await client.comment.create({
+        const newComment = await client.comment.create({
           data: {
             payload,
             photo: {
@@ -41,6 +41,7 @@ export default {
         });
         return {
           ok: true,
+          id: newComment.id,
         };
       }
     ),
