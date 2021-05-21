@@ -577,3 +577,5 @@ subscriptions 사용위한 환경 설정
 
 - 내가 해당 feed에 like를 했는지 여부
 - like테이블에서 연결된 photoId와 userId를 찾아서 해당조건에 만족하는 like가 있으면 true를 반환하고 없으면 false를 반환한다.
+
+# Comment number for photo's computed field
