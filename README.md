@@ -581,3 +581,7 @@ subscriptions 사용위한 환경 설정
 # Comment number for photo's computed field
 
 # fix Comments function
+
+# change seeFeed for infinite scrolling
+
+- #15.10
