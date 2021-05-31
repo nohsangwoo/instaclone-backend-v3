@@ -587,6 +587,10 @@ subscriptions 사용위한 환경 설정
 - # 15.10
 
 - # 16.6 fix searchPhotos resovers
+
   searchPhotos에서 검색시 startsWitth가 아닌 contains로 검색
   startsWith : 검색어의 시작부분이 꼭 같아야 검색됨
   contains : 검색어의 어느 부분이든 겹치는 부분이 존재하면 검색됨
+
+- seePhotoComments 에 include:{ user:true } 설정
+  그래야 comments 에서 user정보 불러올수 있음

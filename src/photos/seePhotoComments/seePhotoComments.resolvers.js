@@ -7,6 +7,9 @@ export default {
         where: {
           photoId: id,
         },
+        include: {
+          user: true,
+        },
         orderBy: {
           createdAt: 'asc',
         },
