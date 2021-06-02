@@ -7,6 +7,7 @@ export default {
   Mutation: {
     uploadPhoto: protectedResolver(
       async (_, { file, caption }, { loggedInUser }) => {
+        console.log(loggedInUser);
         let hashtagObj = [];
         if (caption) {
           hashtagObj = processHashtags(caption);

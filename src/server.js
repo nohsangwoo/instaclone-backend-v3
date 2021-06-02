@@ -18,6 +18,8 @@ const apollo = new ApolloServer({
     // ctx => context를 줄여서 표현함
     // request가 있다면 즉, https headers를 사용하여 직접 전달 받은것이라면 token을 바로 가져옴
     if (ctx.req) {
+      console.log('token for on req', ctx.req.headers.token);
+
       return {
         loggedInUser: await getUser(ctx.req.headers.token),
       };
@@ -37,6 +39,7 @@ const apollo = new ApolloServer({
     // onConnect의 첫번째 파라미터는 http의 Headers이다 headers로 token을 전달받고있으니 여기서도 보이는 것
     // 로그인된 사람만 subscriptions기능을 이용할 수 있다라고 설계한 경우만 이렇게 구성 그게 아니라면 이렇게 설계 하면 안됨
     onConnect: async ({ token }) => {
+      console.log('token for on conect', token);
       // token을 headers로 전달 받지 못했으면 listening권한이 없음 에러 핸들링
       if (!token) {
         throw new Error("You can't listen.");
