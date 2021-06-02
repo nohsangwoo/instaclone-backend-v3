@@ -594,3 +594,7 @@ subscriptions 사용위한 환경 설정
 
 - seePhotoComments 에 include:{ user:true } 설정
   그래야 comments 에서 user정보 불러올수 있음
+
+# upload문제 해결 방법들
+
+http://blog.naver.com/PostView.nhn?blogId=yui050505&logNo=222286087137&categoryNo=177&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
