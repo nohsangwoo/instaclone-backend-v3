@@ -13,7 +13,8 @@ AWS.config.update({
 export const uploadToS3 = async (file, userId, folderName) => {
   // 파일에서 파일이름과, createReadStream을 추출하는 과정을 비동기 처리한다
   // fix bug 배열형식으로 반환되는점 수정
-  const { filename, createReadStream } = await file[0];
+  const { filename, createReadStream } = await file;
+
   // readStream을 추출해서 변수저장
   const readStream = createReadStream();
   // 저장되는 경로 및 파일이름을 만든다(folderName/userId-오늘날짜-전달받은 파일이름)
