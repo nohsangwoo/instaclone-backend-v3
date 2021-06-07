@@ -11,6 +11,7 @@ const apollo = new ApolloServer({
   resolvers,
   typeDefs,
   playground: true,
+  introspection: true,
   // http 상태와 ws상태를 둘다 사용하려고 이런 작업을 해줌
   // context는 모든 resolver 사용시 세번째 agrs로 받아올수 있는 값을 말한다.
   // 지금은 이곳에서 https headers에서 전달받는 token값을 이용하여 로그인한 유저의 상태를 반환하지만
