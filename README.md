@@ -643,3 +643,15 @@ $ git add .
 $ git commit -am "make it better"
 $ git push heroku master
 ```
+
+# https://instaclone-backend-v3.herokuapp.com/ deployed to Heroku
+
+# 설치 정보및 에러정보 세팅 정보등등 얻을수 있음
+
+https://instaclone-backend-v3.herokuapp.com/ deployed to Heroku
+
+# 19.2 Deploy to Heroku part Two
+
+- heroku logs --tail에서
+  혹시 모듈을 찾을수 없다는 버그가 뜬다면 dependency에 모듈을 추가해주면됨
+  
