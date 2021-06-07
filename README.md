@@ -682,3 +682,8 @@ $ git push heroku master
 - add npx
 
 - gitignore에서 prisma 제한 해제
+
+# heroku - github connect
+
+- enable automatic deploys
+  깃연결 후 마스터에 push 할때 자동으로 deploy되게 설정
