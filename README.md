@@ -656,3 +656,25 @@ $ git push heroku master
   따라서 아폴로 서버는 자동으로 playground를 false시켜줌
 
 - playground를 활성화 해줌(server.js)
+
+# heroku
+
+- settings -Reveal Config Vars
+  env변수 등록
+
+- overview - Configure Add-ons
+  postgres 무료버젼 등록
+  Reveal Config Vars에 DB URL이 자동으로 추가됨
+- prisma migrate를 heroku postgres에 진행하기
+  prisma migrate deploy
+  https://www.prisma.io/docs/guides/deployment/deploy-database-changes-with-prisma-migrate
+  https://www.prisma.io/docs/guides/deployment/deployment-guides/deploying-to-heroku/
+
+- release phase 적용
+  heroku 안에서 database migration을 작동시킬수 있는 comand
+  https://devcenter.heroku.com/articles/release-phase
+
+- 앱실행전 작동해야할 작업을 Procfile에 지정해두는 것
+  (migrate를 진행 후 npm start 진행)
+  release: prisma migrate deploy
+  web: npm start
