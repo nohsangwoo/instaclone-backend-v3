@@ -623,3 +623,23 @@ npm install @babel/cli --dev-only
 # babel cli설치
 
 # 19.0 Building the Server
+
+# #19.1 Deploy to Heroku part One
+
+- heroku cli 서치
+- heroku cli login
+
+```
+Create a new Git repository
+Initialize a git repository in a new or existing directory
+
+$ cd my-project/
+$ git init
+$ heroku git:remote -a instaclone-backend-v3
+Deploy your application
+Commit your code to the repository and deploy it to Heroku using Git.
+
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+```
