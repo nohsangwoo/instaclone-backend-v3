@@ -654,4 +654,8 @@ https://instaclone-backend-v3.herokuapp.com/ deployed to Heroku
 
 - heroku logs --tail에서
   혹시 모듈을 찾을수 없다는 버그가 뜬다면 dependency에 모듈을 추가해주면됨
-  
+
+- process.env.NODE_ENV === "production"
+  heroku안에선 자동으로 이렇게 됨
+
+- playground를 활성화 해줌(server.js)
