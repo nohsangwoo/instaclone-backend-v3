@@ -680,3 +680,5 @@ $ git push heroku master
   web: npm start
 
 - add npx
+
+- gitignore에서 prisma 제한 해제
