@@ -116,7 +116,7 @@ dist
 .pnp.*
 
 #prisma migrations folder
-prisma/migrations/
+# prisma/migrations/
 
 #uploads
 uploads/*
