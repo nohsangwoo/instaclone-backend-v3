@@ -598,3 +598,28 @@ subscriptions 사용위한 환경 설정
 # upload문제 해결 방법들
 
 http://blog.naver.com/PostView.nhn?blogId=yui050505&logNo=222286087137&categoryNo=177&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=postView
+
+# babel/node는 prodiuction에서 사용못함
+
+# babel을 package.json으로 부터 실행할수 있도록 만들어줌
+
+npm install @babel/cli --dev-only
+
+# package.json
+
+"build": "babel src --out-dir build",
+
+- babel로 빌드하고 src폴더 안에있는걸 빌드해서 바깥 directory에서 build폴더안에 빌드한 파일을 모아달라는 뜻
+
+- and npm run build
+
+- https://babeljs.io/docs/en/babel-plugin-transform-runtime
+
+- npm install --save-dev @babel/plugin-transform-runtime
+- npm install --save @babel/runtime
+- babel.config 설정
+  "plugins": ["@babel/plugin-transform-runtime"]
+
+# babel cli설치
+
+# 19.0 Building the Server
