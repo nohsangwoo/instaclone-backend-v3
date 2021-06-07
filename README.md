@@ -644,11 +644,7 @@ $ git commit -am "make it better"
 $ git push heroku master
 ```
 
-# https://instaclone-backend-v3.herokuapp.com/ deployed to Heroku
-
 # 설치 정보및 에러정보 세팅 정보등등 얻을수 있음
-
-https://instaclone-backend-v3.herokuapp.com/ deployed to Heroku
 
 # 19.2 Deploy to Heroku part Two
 
@@ -657,5 +653,6 @@ https://instaclone-backend-v3.herokuapp.com/ deployed to Heroku
 
 - process.env.NODE_ENV === "production"
   heroku안에선 자동으로 이렇게 됨
+  따라서 아폴로 서버는 자동으로 playground를 false시켜줌
 
 - playground를 활성화 해줌(server.js)
