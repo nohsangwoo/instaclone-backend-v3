@@ -678,3 +678,5 @@ $ git push heroku master
   (migrate를 진행 후 npm start 진행)
   release: prisma migrate deploy
   web: npm start
+
+- add npx
