@@ -5,6 +5,14 @@ import logger from 'morgan';
 import { ApolloServer } from 'apollo-server-express';
 import { typeDefs, resolvers } from './schema';
 import { getUser } from './users/users.utils';
+import cors from 'cors';
+
+// cors에서 특정 web만 허용하기위해서 사용
+const corsOptions = {
+  origin: 'https://insta-front-end-v3-noh.netlify.app',
+  credentials: true,
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 
 const PORT = process.env.PORT;
 const apollo = new ApolloServer({
@@ -60,6 +68,9 @@ const app = express();
 app.use(logger('tiny'));
 apollo.applyMiddleware({ app });
 app.use('/static', express.static('uploads'));
+
+// cors설정
+app.use(cors(corsOptions));
 
 // http server 생성
 const httpServer = http.createServer(app);
