@@ -17,7 +17,7 @@ import { getUser } from './users/users.utils';
 const PORT = process.env.PORT;
 const apollo = new ApolloServer({
   cors: {
-    origin: true,
+    origin: 'https://insta-front-end-v3-noh.netlify.app', // or true 전부허용시
     credentials: true,
   },
 
