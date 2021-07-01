@@ -14,11 +14,12 @@ import { getUser } from './users/users.utils';
 //   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 // };
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
+const setUrl = process.env.NETLIFY_URL;
 const apollo = new ApolloServer({
   cors: {
     // origin: 'https://insta-front-end-v3-noh.netlify.app', // or true 전부허용시
-    origin: true,
+    origin: setUrl,
     credentials: true,
   },
 
